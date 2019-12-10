@@ -1,0 +1,10 @@
+FROM adoptopenjdk/openjdk11:armv7l-debian-jdk-11.0.5_10-slim
+
+ENV ENV docker
+
+WORKDIR /opt/sentinel
+
+COPY sentinel.example.yaml /opt/sentinel/sentinel.yaml
+COPY sentinel.jar /opt/sentinel/sentinel.jar
+
+ENTRYPOINT ["java", "-Xmx64m", "-jar", "sentinel.jar"]

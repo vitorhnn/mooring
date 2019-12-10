@@ -1,0 +1,12 @@
+FROM adoptopenjdk/openjdk11:armv7l-debian-jdk-11.0.5_10-slim
+
+ENV ENV docker
+
+WORKDIR /opt/Quarterdeck
+
+EXPOSE 4269
+
+ENTRYPOINT ["java", "-Xmx128m", "-jar", "Quarterdeck.jar"]
+
+COPY quarterdeck.example.yaml /opt/Quarterdeck/quarterdeck.yaml
+COPY Quarterdeck.jar /opt/Quarterdeck/Quarterdeck.jar
