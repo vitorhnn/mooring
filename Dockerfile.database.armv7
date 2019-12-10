@@ -1,4 +1,4 @@
-FROM arm32v7/postgres:10-alpine
+FROM arm32v7/postgres:10.0
 ENV POSTGRES_USER fredboat
 COPY initdb.sh /usr/local/bin/
 COPY run.sh /usr/local/bin/
